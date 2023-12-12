@@ -1,4 +1,5 @@
 import  { useState, useEffect } from 'react';
+import Box from '../partials/Box';
 
 
 const Countdown = () => {
@@ -84,27 +85,30 @@ const Countdown = () => {
 
   return (
 
-    <div className="text-center mt-8">
-      <label htmlFor="minutes" className="text-sm">Enter Minutes</label><br />
-      <input type="number" min={0} value={value} onChange={handleChange} />
-      
-      <div className="text-4xl">
-        {String(hours).padStart(2,'0') }:{String(minutes).padStart(2, '0')}:{String(seconds).padStart(2, '0')}
-      </div>
-      <p className='mb-3'>hour : min : sec</p>
+    <div className="">
+      <label htmlFor="minutes" className="text-gray-600 text-sm font-bold mb-4 z-2">Enter Minutes</label><br />
+      <input className='w-full h-8 p-3 mb-5 text-gray-700 rounded-md z-10 input-field font-bold' type="number" min={0} value={value} onChange={handleChange} />
 
+           
+      <div className="flex justify-center gap-3 mb-4">
+        <Box time={hours} label='hour' />
+        <Box time={minutes} label='min' />
+        <Box time={seconds} label='sec' />
+      </div>
+      
+      <div className="flex justify-center gap-3 mt-4">
       {!isRunning && (
         <button
-          className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded"
+          className="btn text-green-600 text-white font-bold py-2 px-8 rounded"
           onClick={handleStart}
           >
-            Play
+            Start
         </button>
       )}
 
       {isRunning && (
         <button
-          className="bg-yellow-500 hover:bg-yellow-600 text-white font-bold py-2 px-4 rounded"
+          className="btn text-yellow-600 text-white font-bold py-2 px-8 rounded"
           onClick={handlePause}
         >
           Pause
@@ -112,11 +116,12 @@ const Countdown = () => {
       )}
 
       <button
-        className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded"
+        className="btn text-red-600 text-white font-bold py-2 px-8 rounded"
         onClick={handleReset}
       >
         Reset
       </button>
+      </div>
     </div>
 
   )

@@ -1,5 +1,5 @@
 import Countdown from "./components/Countdown"
-
+import './App.css'
 function App() {
 
   return (
