@@ -99,7 +99,7 @@ const Countdown = () => {
       <div className="flex justify-center gap-3 mt-4">
       {!isRunning && (
         <button
-          className="btn text-green-600 text-white font-bold py-2 px-8 rounded"
+          className="btn text-green-400 font-bold py-2 px-8 rounded"
           onClick={handleStart}
           >
             Start
@@ -108,7 +108,7 @@ const Countdown = () => {
 
       {isRunning && (
         <button
-          className="btn text-yellow-600 text-white font-bold py-2 px-8 rounded"
+          className="btn text-yellow-400 font-bold py-2 px-8 rounded"
           onClick={handlePause}
         >
           Pause
@@ -116,7 +116,7 @@ const Countdown = () => {
       )}
 
       <button
-        className="btn text-red-600 text-white font-bold py-2 px-8 rounded"
+        className="btn text-red-400 font-bold py-2 px-8 rounded"
         onClick={handleReset}
       >
         Reset
